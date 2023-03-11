@@ -37,7 +37,11 @@ namespace BerlinClock
         
         static void ConvertAString()
         {
-            AnsiConsole.MarkupLine("Not implemented yet.");
+            var time = AnsiConsole.Ask<string>("Enter a time (Berlin clock format): ");
+            var clock = new BerlinClockConverter();
+
+            AnsiConsole.MarkupLine($"The time is: {clock.ConvertStringToTimeOnly(time)}");
+            UserChoice();
         }
 
         static void ShowTheTime()
